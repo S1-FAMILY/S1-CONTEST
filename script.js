@@ -11,8 +11,12 @@ function toggleMobileMenu() {
     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 }
 
-mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+}
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+}
 
 // Close mobile menu when clicking on nav links
 navLinksItems.forEach(item => {
@@ -26,12 +30,12 @@ navLinksItems.forEach(item => {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        if (href.startsWith('http') || href.startsWith('mailto')) return;
+        
         e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
+        const targetElement = document.querySelector(href);
         if (targetElement) {
             const headerHeight = document.querySelector('header').offsetHeight;
             const targetPosition = targetElement.offsetTop - headerHeight - 20;
@@ -48,10 +52,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
-        header.style.background = 'rgba(0, 0, 0, 0.95)';
-        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        header.style.background = 'rgba(20, 18, 14, 0.96)';
+        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.2)';
     } else {
-        header.style.background = 'var(--primary-color)';
+        header.style.background = 'rgba(30, 30, 28, 0.92)';
         header.style.boxShadow = 'none';
     }
 });
@@ -85,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Handle window resize
 window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+    if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
         toggleMobileMenu();
     }
 });
@@ -95,22 +99,18 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
 
-// Contact items interaction
+// Contact items interaction with click feedback
 document.addEventListener('DOMContentLoaded', function() {
     const contactItems = document.querySelectorAll('.contact-item');
     
     contactItems.forEach(item => {
-        // Add click feedback
         item.addEventListener('click', function(e) {
-            // Add temporary active state
             this.style.transform = 'translateY(-5px) scale(0.98)';
-            
             setTimeout(() => {
                 this.style.transform = 'translateY(-8px)';
             }, 150);
         });
         
-        // Add keyboard navigation
         item.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
