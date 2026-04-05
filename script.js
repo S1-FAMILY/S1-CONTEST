@@ -52,10 +52,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
-        header.style.background = 'rgba(20, 18, 14, 0.96)';
-        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.2)';
+        header.style.background = 'rgba(30, 26, 22, 0.96)';
+        header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.1)';
     } else {
-        header.style.background = 'rgba(30, 30, 28, 0.92)';
+        header.style.background = 'rgba(42, 36, 30, 0.94)';
         header.style.boxShadow = 'none';
     }
 });
