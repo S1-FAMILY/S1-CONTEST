@@ -182,6 +182,8 @@ header {
     border-radius: 40px;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn:hover {
@@ -203,7 +205,7 @@ header {
     letter-spacing: 1px;
 }
 
-.info-card, .detail-item, .category-card, .reg-card, .ticket-card, .masters-schedule, .pricing, .criteria-box, .contact-item {
+.info-card, .detail-item, .category-card, .reg-card, .ticket-card, .criteria-box, .contact-item {
     background: #fffaf3;
     border: 1px solid var(--beige-dark);
     border-radius: 12px;
@@ -404,11 +406,6 @@ header {
     margin-left: 8px;
 }
 
-.ticket-card .btn {
-    background: var(--beige-base);
-    border: none;
-}
-
 .criteria-box {
     padding: 32px;
     margin-bottom: 40px;
@@ -428,6 +425,10 @@ header {
     border: 1px solid var(--beige-dark);
 }
 
+.rules-list {
+    margin-top: 20px;
+}
+
 .rules-item {
     padding: 24px;
     background: #fffaf3;
@@ -435,36 +436,142 @@ header {
     margin-bottom: 20px;
 }
 
-.masters-content {
+/* БЛОК МАСТЕР-КЛАССОВ */
+.masters-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    background: #fffaf3;
+    padding: 24px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    border: 1px solid var(--beige-dark);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+}
+
+.masters-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-.masters-schedule, .pricing {
-    padding: 32px;
+.master-card {
+    background: #fffaf3;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--beige-dark);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.schedule-item {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--beige-base);
+.master-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
 }
 
-.price-period {
-    margin-bottom: 20px;
+.master-img {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--beige-base), var(--beige-deep));
 }
 
-.price-item {
+.master-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.master-card:hover .master-img img {
+    transform: scale(1.05);
+}
+
+.master-info {
+    padding: 24px;
+}
+
+.master-info h3 {
+    font-size: 1.6rem;
+    color: var(--brown-deep);
     margin-bottom: 8px;
 }
 
-.payment-terms {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--beige-base);
+.master-style {
+    display: inline-block;
+    background: var(--beige-base);
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--brown-deep);
 }
 
+.master-time {
+    font-weight: 700;
+    margin: 10px 0;
+    color: #8b6946;
+}
+
+.pricing-master {
+    background: #f9f3ea;
+    border-radius: 24px;
+    padding: 28px;
+    margin-top: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed var(--beige-dark);
+    padding: 12px 0;
+}
+
+.price-label {
+    font-weight: 600;
+}
+
+.price-value {
+    font-weight: 700;
+    color: var(--brown-deep);
+}
+
+.repost-badge {
+    background: #e0cfbb;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.booking-terms {
+    background: #fff6ed;
+    padding: 24px;
+    border-radius: 24px;
+    margin: 30px 0 20px;
+    border-left: 6px solid var(--brown-soft);
+}
+
+.phone-big {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brown-deep);
+    text-decoration: none;
+}
+
+.limited-places {
+    background: var(--beige-dark);
+    color: #2a241e;
+    padding: 8px 16px;
+    border-radius: 60px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* КОНТАКТЫ */
 .contacts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -485,11 +592,7 @@ header {
     margin-bottom: 12px;
 }
 
-.contact-item h3 {
-    font-size: 1rem;
-    margin-bottom: 8px;
-}
-
+/* ФУТЕР */
 footer {
     background: var(--bg-dark);
     color: var(--beige-base);
@@ -520,6 +623,7 @@ footer {
     color: var(--beige-dark);
 }
 
+/* АДАПТИВ */
 @media (max-width: 1024px) {
     .registration-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -552,9 +656,6 @@ footer {
     .hero {
         margin-top: 70px;
     }
-    .hero-content {
-        padding: 20px;
-    }
     .btn-group {
         flex-direction: column;
         align-items: center;
@@ -571,11 +672,13 @@ footer {
     }
     .ticket-prices {
         gap: 20px;
+        flex-direction: column;
+        align-items: center;
     }
-    .ticket-price-item {
-        padding: 10px 20px;
+    .master-img {
+        height: 220px;
     }
-    .ticket-price {
+    .master-info h3 {
         font-size: 1.3rem;
     }
 }
@@ -590,62 +693,11 @@ footer {
     .contacts-grid {
         grid-template-columns: 1fr;
     }
-    .ticket-prices {
+    .price-row {
         flex-direction: column;
-        align-items: center;
+        gap: 8px;
     }
-}
-
-
-
-
-
-
-
-
-
-/* Блок мастер-классов с размытием */
-.masters-blur-wrapper {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.masters-blur-content {
-    filter: blur(12px);
-    pointer-events: none;
-    user-select: none;
-}
-
-.masters-blur-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(245, 239, 230, 0.3);
-    z-index: 10;
-}
-
-.masters-soon {
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--brown-deep);
-    background: var(--beige-base);
-    padding: 20px 50px;
-    border-radius: 60px;
-    letter-spacing: 8px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    .masters-soon {
-        font-size: 2rem;
-        padding: 12px 30px;
-        letter-spacing: 4px;
+    .phone-big {
+        font-size: 1.2rem;
     }
 }

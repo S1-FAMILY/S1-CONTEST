@@ -90,14 +90,8 @@
         <div class="ticket-card">
             <h3>ЗРИТЕЛЬСКИЕ БИЛЕТЫ</h3>
             <div class="ticket-prices">
-                <div class="ticket-price-item">
-                    <span class="ticket-price">700 ₽</span>
-                    <span class="ticket-label">Предпродажа</span>
-                </div>
-                <div class="ticket-price-item">
-                    <span class="ticket-price">1 000 ₽</span>
-                    <span class="ticket-label">В день соревнований (24 мая)</span>
-                </div>
+                <div class="ticket-price-item"><span class="ticket-price">700 ₽</span><span class="ticket-label">Предпродажа</span></div>
+                <div class="ticket-price-item"><span class="ticket-price">1 000 ₽</span><span class="ticket-label">В день соревнований (24 мая)</span></div>
             </div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScZxvj0MYnahHa0y36I2aHw2Qiq2rdI_L55JJMGK9VO98lXQw/viewform?usp=dialog" class="btn" target="_blank">КУПИТЬ БИЛЕТ</a>
         </div>
@@ -112,23 +106,99 @@
     </div>
 </section>
 
+<!-- МАСТЕР-КЛАССЫ (ОБНОВЛЕННЫЙ БЛОК) -->
 <section class="masters" id="masters">
     <div class="container">
         <h2 class="section-title">МАСТЕР-КЛАССЫ | 23 МАЯ 2026</h2>
-        <div class="masters-blur-content">
-            <div class="masters-schedule blur-card"><h3>РАСПИСАНИЕ</h3><div class="schedule-item"><h4>СКОРО</h4><p>Информация о мастерах будет опубликована</p></div><div class="schedule-item"><h4>СКОРО</h4><p>Следите за обновлениями в Telegram</p></div><div class="schedule-item"><h4>СКОРО</h4><p>Подробности появится позже</p></div></div>
-            <div class="pricing"><h3>СТОИМОСТЬ МК</h3><div class="price-period"><h4>Full pass (2 класса)</h4><div class="price-item"><strong>До 10 мая:</strong> 3 500 ₽</div><div class="price-item"><strong>С 11 мая:</strong> 4 200 ₽</div></div><div class="price-period"><h4>Один класс</h4><div class="price-item"><strong>До 10 мая:</strong> 2 000 ₽</div><div class="price-item"><strong>С 11 мая:</strong> 2 500 ₽</div></div><div class="payment-terms"><p>Предоплата 50% до 5 мая. Возврат только при отмене организатора. Возможна передача места.</p></div></div>
-            <div>ДЛЯ ТОГО ЧТОБЫ ВСЕ РАБОТАЛО, НАДО УБРАТЬ -blur И УБРАТЬ class="masters-blur-overlay</div>
+        <div class="masters-intro">
+            <i class="fas fa-star" style="color: var(--brown-soft); margin-right: 8px;"></i> 
+            23 мая в рамках нашего контеста пройдут мастер-классы от приглашенных топ-танцоров нашей страны!
         </div>
 
-        <div class="masters-blur-overlay">
-                <div class="masters-soon">СКОРО...</div>
+        <div class="masters-grid">
+            <!-- Диана Горбункова -->
+            <div class="master-card">
+                <div class="master-img">
+                    <img src="гурбункова.png" alt="Диана Горбункова" onerror="this.src='https://placehold.co/400x300/f5efe6/c2a15b?text=Диана+Горбункова'">
+                </div>
+                <div class="master-info">
+                    <h3>ДИАНА ГОРБУНКОВА</h3>
+                    <span class="master-style">HIP-HOP</span>
+                    <div class="master-time"><i class="far fa-clock"></i> 13:00</div>
+                    <p>Мощный грув, четкая техника и энергия — заряжаемся от топового хореографа.</p>
+                </div>
+            </div>
+            <!-- Амир Низамов -->
+            <div class="master-card">
+                <div class="master-img">
+                    <img src="низамов.png" alt="Амир Низамов" onerror="this.src='https://placehold.co/400x300/f5efe6/c2a15b?text=Амир+Низамов'">
+                </div>
+                <div class="master-info">
+                    <h3>АМИР НИЗАМОВ</h3>
+                    <span class="master-style">HIP-HOP</span>
+                    <div class="master-time"><i class="far fa-clock"></i> 15:00</div>
+                    <p>Уличная культура, фишки и неподражаемый стиль от одного из лучших хип-хоперов страны.</p>
+                </div>
+            </div>
+            <!-- Соня Мисник -->
+            <div class="master-card">
+                <div class="master-img">
+                    <img src="мисник.png" alt="Соня Мисник" onerror="this.src='https://placehold.co/400x300/f5efe6/c2a15b?text=Соня+Мисник'">
+                </div>
+                <div class="master-info">
+                    <h3>СОНЯ МИСНИК</h3>
+                    <span class="master-style">АВТОРСКОЕ ХОРЕО</span>
+                    <div class="master-time"><i class="far fa-clock"></i> 17:00</div>
+                    <p>Эмоциональная подача, пластика и уникальный почерк. Класс для души и тела.</p>
+                </div>
+            </div>
         </div>
 
+        <div class="pricing-master">
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--brown-deep);">СТОИМОСТЬ УЧАСТИЯ</h3>
+            <div class="price-row">
+                <span class="price-label"><strong>Full pass (2 класса)</strong> <span class="repost-badge">С репостом</span></span>
+                <span class="price-value">До 01.05: 5 900 ₽</span>
+                <span class="price-value">С 02.05: 6 900 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-label"><strong>Full pass (2 класса)</strong> <span class="repost-badge">Без репоста</span></span>
+                <span class="price-value">До 01.05: 6 100 ₽</span>
+                <span class="price-value">С 02.05: 7 100 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-label"><strong>1 класс</strong> <span class="repost-badge">С репостом</span></span>
+                <span class="price-value">До 01.05: 2 800 ₽</span>
+                <span class="price-value">С 02.05: 3 300 ₽</span>
+            </div>
+            <div class="price-row">
+                <span class="price-label"><strong>1 класс</strong> <span class="repost-badge">Без репоста</span></span>
+                <span class="price-value">До 01.05: 3 100 ₽</span>
+                <span class="price-value">С 02.05: 3 600 ₽</span>
+            </div>
+        </div>
 
+        <div class="booking-terms">
+            <i class="fas fa-calendar-check" style="font-size: 1.6rem; margin-right: 12px; color: var(--brown-deep);"></i>
+            <strong style="font-size: 1.2rem;">Место можно забронировать:</strong>
+            <ul style="margin: 16px 0 12px 24px;">
+                <li>При 100% оплате</li>
+                <li>При 50% предоплате — остаток необходимо внести не позднее 10 мая!</li>
+            </ul>
+            <p><i class="fas fa-exclamation-circle"></i> Оплата за класс возвращается только при отмене мероприятия, но свое место можно всегда подарить или перепродать.</p>
+            <div style="margin-top: 20px;">
+                <span class="limited-places"><i class="fas fa-heart"></i> МЕСТА ОГРАНИЧЕНЫ</span>
+            </div>
+            <div style="margin-top: 22px;">
+                <a href="tel:+79624542221" class="phone-big"><i class="fas fa-phone-alt"></i> +7 (962) 454-22-21</a>
+                <p style="margin-top: 8px;">Запись по телефону или в Telegram</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#contacts" class="btn" style="background: var(--beige-base);">СВЯЗАТЬСЯ ДЛЯ ЗАПИСИ</a>
+        </div>
     </div>
 </section>
- 
 
 <section class="contacts" id="contacts">
     <div class="container">
